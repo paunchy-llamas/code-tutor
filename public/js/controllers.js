@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
+angular.module('myApp.controllers', ['myApp.services']).
   controller('AppCtrl', function ($scope, $http) {
 
     $http({
@@ -18,7 +18,8 @@ angular.module('myApp.controllers', []).
 
   }).
   controller('MyCtrl1', function ($scope) {
-    // write Ctrl here
+    // Test dummy data
+    $scope.data = dummyData.getData();
 
   }).
   controller('MyCtrl2', function ($scope) {
