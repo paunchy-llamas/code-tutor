@@ -6,7 +6,6 @@
   "scripts": {
     "test": "gulp karma",
     "start": "gulp",
-    "postinstall": "curl -s https://raw.githubusercontent.com/hackreactor-labs/pomander/master/bin/install | bash",
     "lint": "eslint ./"
   },
   "devDependencies": {

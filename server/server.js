@@ -19,14 +19,14 @@ app.use(methodOverride());
 
 
 var isProduction = process.env.NODE_ENV === 'production';
-
+const port = isProduction ? process.env.PORT : 8000;
 var host = process.env.APP_HOST || 'localhost';
 var publicPath = path.resolve(__dirname, '..', 'public');
 
 //set up routes here from routes file
 require('./routes')(app, express);
 
-app.listen(8000, function () {
+app.listen(port, function () {
 });
 
 
