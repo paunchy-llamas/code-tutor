@@ -2,9 +2,9 @@
   
   'use strict';
 
-  /* Controllers */
+  /* Controllers */ 
 
-  angular.module('myApp')
+  angular.module('myApp') 
 
   .controller('SearchController', function ($scope, SearchService) {
 

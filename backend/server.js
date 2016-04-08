@@ -26,7 +26,7 @@ var port = isProduction ? 8080 : 3000;
 var publicPath = path.resolve(__dirname, '..', 'public');
 
 if (!isProduction) {
-  // Any requests to localhost:3000/assets is proxied
+  // Any requests to localhost:3000/assets i proxied
   // to webpack-dev-server
   app.all(['/assets/*', '*.hot-update.json'], function (req, res) {
     proxy.web(req, res, {
