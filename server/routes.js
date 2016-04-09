@@ -9,14 +9,17 @@ module.exports = function (app, express) {
     res.sendFile(path.join(__dirname, '/../public', 'index.html'));
   });
   
-  app.get('/tutors/:name', userController.findTutor);
 
   // temporary path for testing: get all tutors in db
-  app.get('/api/tutors/all', userController.getAllTutors);
+  app.get('/api/tutor/all', userController.getAllTutors);
+  app.get('/tutor/:name', userController.findTutor);
 
   app.post('/api/users/signup', userController.signup);
   app.post('/api/users/signin', userController.signin);
-  app.post('api/tutor/profile', userController.saveProfile);
+  app.post('/api/users/search', userController.search);
+  app.post('/api/tutor/profile', userController.saveProfile);
+  app.post('/api/tutor/update', userController.updateProfile);
+
   
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler

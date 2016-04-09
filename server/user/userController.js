@@ -22,6 +22,29 @@ module.exports = {
     });
   },
 
+  getTutor: function(req, res, nex) {
+    User.find({username: req.params.name}, function(err, user) {
+      res.send(user);
+    });
+
+    // extract image link
+    // send image back with POST
+
+    //write content to file system
+        // var fs_write_stream = fs.createWriteStream('write.txt');
+         
+        // //read from mongodb
+        // var readstream = gfs.createReadStream({
+        //  filename: 'mongo_file.txt'
+        // });
+        // readstream.pipe(fs_write_stream);
+        // fs_write_stream.on('close', function () {
+        //  console.log('file has been written fully!');
+        // });
+
+
+  },
+
   findTutor: function(req, res, nex) {
     findUser({name: req.params.name, isTutor: true})
       .then(function(tutor) {
