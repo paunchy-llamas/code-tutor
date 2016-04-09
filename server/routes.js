@@ -9,10 +9,11 @@ module.exports = function (app, express) {
     res.sendFile(path.join(__dirname, '/../public', 'index.html'));
   });
   
-  app.get('/tutors/:name', userController.findTutor);
+  app.get('/tutor/:name', userController.findTutor);
 
   // temporary path for testing: get all tutors in db
-  app.get('/api/tutors/all', userController.getAllTutors);
+  app.get('/api/tutor/all', userController.getAllTutors);
+  app.get('/api/tutor/:name', userController.getTutor);
 
   app.post('/api/users/signup', userController.signup);
   app.post('/api/users/signin', userController.signin);

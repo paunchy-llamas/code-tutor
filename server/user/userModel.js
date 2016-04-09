@@ -3,13 +3,16 @@ var mongoose = require('mongoose');
 var Q = require('q');
 
 var userSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
   name: String,
-  loc: String, //TODO: find out what type this should be for GeoJSON
   likes: Number,
-  email: String,
+  email: { type: String, required: true, unique: true },
   password: String, // hash and salt password...
   location: Object,
-  isTutor: Boolean
+  address: Object,
+  isTutor: Boolean,
+  bio: String,
+  subjects: Object
 });
 
 
