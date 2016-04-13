@@ -1,13 +1,19 @@
-<div id="searchBar" ng-controller='SearchController'>
-
-  <form>
-
-    <input type="text" 
-
-    placeholder="Search for a tutor">
-    <button ng-click="search()">Go</button>
-  </form>
+<!-- Search bar -->
+<div id="container-search">
+  <div id="searchBar" ng-controller="SearchController">       
+      <form id="search" name="search-input" ng-submit="search()">
+        <div>
+          <input name="search[city]" type="text" placeholder="Enter city" required="required" class="input pass">
+        </div>
+        <div>
+          <input name="search[subjects]" type="text" placeholder="Enter subjects (E.g. Angular React Backbone)" required="required" class="input pass">
+        </div>
+        <!-- <button ng-click="search()">Go</button> -->
+        <button type="submit" class="inputButton searchButton">Find tutors</button>
+      </form>
+  </div>
 </div>
+
 
 <!-- ng-model="searchQuery"  -->
 

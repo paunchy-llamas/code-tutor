@@ -2,20 +2,42 @@
 <html ng-app='codellama'>
   <head>
     <meta charset="utf-8" />
-    <title>Shortly</title>
+    
+    <!-- Responsive design tag for scaling -->
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Tutor</title>
+    
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    
+    <!-- Styles -->
+    <!-- NOTE: May need respond.js -->
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  
   </head>
   <body>
-    <h1>Code Llama!</h1>
-
-    <div ng-include
-      src="'app/search/searchBar.html'">
+    <div id="container-head">
+      <div id="logo"><span>Code Tutor</span></div>
+      <!-- Nav goes here -->
+      <!-- Sign in goes here -->
     </div>
-    <div ng-view></div>
 
+    <!-- App  -->
+    <div ng-include src="'app/search/searchBar.html'"></div>
+    <div ng-view>
+
+    <!-- ////////////////////////////////// -->
+      <!-- html dev content goes here -->
+    <!-- ////////////////////////////////// -->
+
+    <!-- javascript -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
     <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap-theme.min.js"></script>
 
     <script src="app/search/search.js"></script>
     <script src="app/tutors/tutor.js"></script>

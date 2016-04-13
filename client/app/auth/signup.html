@@ -1,19 +1,24 @@
-<div ng-controller='AuthController'>
-  <ul>
-    <li ng-repeat='data in dummyData'>
-      {{ data }}
-    </li>
-  </ul>
+<!-- Sign-up View -->
+<div id="container-signup">
+  <div id="logbox">
+    <div ng-controller='AuthController'>
+      <!--<ul><li ng-repeat='data in dummyData'>{{ data }}</li></ul>-->
+    </div>
+    <form id="signin" name="signupForm" ng-submit="signup()">
+      <h1 align="center">Create an account</h1>
+      <div>
+        <input name="user[username]" type="text" placeholder="Choose a username" required="required" class="input pass" ng-model="user.username" />
+        <!-- <input type="text" ng-model='user.username'> -->
+      </div>
+      <div>
+        <input name="user[email]" type="email" placeholder="Email address" required="required" class="input pass" ng-model="user.email" />
+        <!-- <input type="text" ng-model='user.email'> -->
+      </div>
+      <div>
+        <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass" ng-model="user.password" />
+        <!-- <input type="password" ng-model='user.password'> -->
+      </div>
+      <button type="submit" class="inputButton signupButton">Sign me up!</button>
+    </form>
+  </div>
 </div>
-<form name="signinForm" ng-submit="signup()">
-  <label>Email:
-    <input type="text" ng-model='user.email'>
-  </label>
-  <label>Password:
-    <input type="password" ng-model='user.password'>
-  </label>
-  <label>Username:
-    <input type="text" ng-model='user.username'>
-  </label>
-  <button>signup</button>
-</form>

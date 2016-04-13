@@ -1,16 +1,20 @@
-<div ng-controller='AuthController'>
-  <ul>
-    <li ng-repeat='data in dummyData'>
-      {{ data }}
-    </li>
-  </ul>
+<!-- Sign-in View - Page -->
+<div id="container-signin">
+  <div id="logbox">
+    <div ng-controller='AuthController'>
+      <!--<ul><li ng-repeat='data in dummyData'>{{ data }}</li></ul>-->
+    </div>
+    <form id="signin" name="signinForm" ng-submit="signin()">
+      <h1 align="center">Please sign in</h1>
+      <div class="form-group">
+        <input name="user[email]" type="email" placeholder="Email address" required="required" class="input pass" ng-model="user.email" />
+        <!-- <input type="text" ng-model='user.email'> -->
+      </div>
+      <div>
+        <input name="user[password]" type="password" placeholder="Choose a password" required="required" class="input pass" ng-model="user.password" />
+        <!-- <input type="password" ng-model='user.password'> -->
+      </div>
+      <button type="submit" class="inputButton signinButton">Sign me in!</button>
+    </form>
+  </div>
 </div>
-<form name="signinForm" ng-submit="signin()">
-  <label>Email:
-    <input type="text" ng-model='user.email'>
-  </label>
-  <label>Password:
-    <input type="password" ng-model='user.password'>
-  </label>
-  <button>signin</button>
-</form>
