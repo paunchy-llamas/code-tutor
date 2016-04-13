@@ -33,9 +33,15 @@ angular.module('codellama.auth', [])
     });
   };
 
+  var logout = function() {
+    $window.localStorage.Item('com.codeLlama');
+    $location.path('/');
+  };
+
   return {
     signin: signin,
-    signup: signup
+    signup: signup,
+    logout: logout
   };
 
 })

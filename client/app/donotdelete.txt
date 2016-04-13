@@ -1,0 +1,45 @@
+/* Let's store notes here. */
+
+
+////////////////////////////////////////////////////////////////////////
+Recipe:
+How to show an element only if the user is logged in.
+
+////////////////// 1) $rootScope //////////////////
+$rootScope is the parent of all $scope objects
+It's best practice to avoid using it, usually, but this is a good use case
+because a lot of pages are going to want to know if a user is logged in or not.
+
+I put a .run inside app.js where $rootScope.loggedIn = false
+I don't know much about .run except it's often used to get an application going.
+
+When a user logs in, set $rootScope.loggedIn = true
+And in the function handling logout, similarly set $rootScope.loggedIn = false
+DO NOT name any local scope variable 'loggedIn'
+
+////////////////// 2) localStorage / tokens //////////////////
+Auth is set up to check if localStorage has a 'com.codeLlama' property before
+any http request is sent. The only 'logic' necessary to log out a user is to remove
+that item from local storage.
+
+Example code: $window.localStorage.removeItem('com.codeLlama') & .getItem('com.codeLlama')
+
+And temporarily, while you're testing, you can store the token in some temp variable:
+$scope.temp = (result of getItem) and later use .setItem('com.codeLlama', $scope.temp)
+to fake a log-in without having to go back to localhost:8000/#/login
+
+////////////////// 3) ng-show & ng-hide //////////////////
+Example code:
+  <p ng-hide='loggedIn'>Displayed only when the user is logged in.</p>
+
+A couple of things:
+1) ng-hide and hg-show are set equal to some variable that must be a Boolean true/false.
+Only if that Boolean is true will the DOM element render.
+2) If 'loggedIn' is not found in the current scope (and it better not be!),
+Angular looks up to $rootScope
+
+////////////////// Notes: //////////////////
+- You need to pass in $rootScope to any controller trying to change $rootScope.loggedIn
+- We planned to have 'become a tutor' show up in the nav bar is logged in, which can now
+be easily done. However we also planned to show 'update your profile' if the user is
+logged in AND a tutor, which will require some additional logic.
