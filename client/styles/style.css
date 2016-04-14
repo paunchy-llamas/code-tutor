@@ -99,7 +99,8 @@ body {
   display: block;
   margin: 30px auto 30px;
   color: white;
-  background-color: #F89406;
+  background-color: 
+  ;
   border: none;
   -webkit-box-shadow: 0 5px 0 #F2784B;
   -moz-box-shadow: 0 5px 0 #F2784B;
@@ -135,3 +136,132 @@ body {
 .inputButton:focus {
   outline: none;
 }
+
+/* ---- */
+
+/*
+body {
+  font-family: Lato;
+  background: #bada55;
+}
+*/
+
+.container-tutor-card {
+  margin: 25px auto;
+  width: 1000px;
+}
+
+/*
+a {
+  display: inline-block;
+  transition: all ease 0.3s;
+}
+*/
+
+#tutor-name {
+  font-size: 2.5em;
+  color: #777777;
+}
+
+#tutor-subjects {
+  font-size: 1.5em;
+  color: #F89406;
+}
+
+#tutor-bio {
+  font-size: 1.1em;
+  color: #777777;
+}
+
+#tutor-city {
+  font-size: 1.5em;
+  color: #F89406;
+}
+
+.profile-text {
+  padding: 0px 0px 15px 0px;
+}
+
+.profile-box {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+  height: 300px;
+  /*overflow: hidden;*/
+}
+
+.profile-box .profile-picture {
+  position: absolute;
+  top: 0px;
+  left: 75px;
+  margin-left: -75px;
+}
+
+.profile-box .profile-picture img {
+  width: 300px;
+  height: 300px;
+}
+
+.profile-content {
+  padding: 30px 80px 30px 350px;
+  text-align: left;
+}
+
+.profile-content h1 {
+  font-weight: normal;
+  margin-bottom: 0.2em;
+}
+
+.profile-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #d2d2d2;
+}
+
+#likes-button {
+  position: absolute; 
+  bottom: 0px;
+  right: 252px;
+}
+
+#read-more-button {
+  position: absolute; 
+  right: 0px;
+  bottom: 0px;
+}
+
+#contact-tutor-button {
+  position: absolute; 
+  right: 117px;
+  bottom: 0px;
+}
+
+.profile-button {
+  border: 0 none;
+  padding: 12px 18px;
+  margin: 10px;
+  font-size: 1.1em;
+  font-size: 14px;
+  color: #fff;
+  background-color: #F89406;
+}
+
+.profile-button:hover {
+  background-color: #F2784B !important;
+  position: absolute; 
+}
+
+.profile-button:focus {
+  outline: none;
+}
+
+.profile-button:active {
+  transform: translate(1px, 1px);
+}
+
+#search-results-title {
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center; 
+}
+
