@@ -2,30 +2,22 @@
 <div class="container-search-results">
   <div id="search-results-title">Your Search results...</div>
 
-  <!-- searchResultsEntry 1 -->
+  <div ng-controller='SearchResultsController'>
+  <div ng-repeat="tutor in tutorData">
+    <a ng-href="/tutor/{{tutor.id}}">
+    <p>Username: {{ tutor.username }} </p>
+    <h5>Name: {{tutor.name}}</h5>
+      <img ng-src="{{tutor.imageId}}">
+    </a>
+    <span>Knows: </span><br>
+    <ul ng-repeat="subject in tutor.subjects">
+      <li>- {{subject}}</li>
+    </ul>
+    <span>City: {{tutor.location.city}}</span><br>
+    <p></p>
 
-  <!-- searchResultsEntry 2 -->
 
-  <!-- searchResultsEntry 3 -->
-
-  <!-- etc... -->
+  </div>
+  </div>
 
 </div>
-
-<!-- NOTE: this was already in file: I think it's old - applogies if it's actually in use:
-
-    <div ng-controller='SearchResultsController'>
-    <div ng-repeat="tutor in tutorData">
-
-      <a ng-href="/tutor/{{tutor.id}}">
-      <h5>{{tutor.name}}</h5>
-        <img ng-src="{{tutor.img}}">
-      </a>
-      <span>Knows: {{tutor.subjects}}</span><br>
-      <span>City: {{tutor.location}}</span><br>
-
-    <p> {{ tutor.username }} </p>
-    </div>
-    </div>
-
--->

@@ -31,7 +31,7 @@ angular.module('codellama.search', [])
 
     // initialize empty tutor data array that will hold search results
     // $scope.tutorData = [];
-
+  
     // define search on scope
     $scope.search = function(city, subjects) {
 
@@ -54,6 +54,7 @@ angular.module('codellama.search', [])
   .controller('SearchResultsController', function ($scope, SearchService) {
 
     $scope.tutorData = SearchService.tutorData;
+
     console.log(SearchService.tutorData);
     console.log('$search results scope.tutorData:', $scope.tutorData);
 

@@ -16,7 +16,7 @@
       })
       .when('/search', {
         templateUrl: 'app/search/searchResults.html',
-        controller: 'SearchController'
+        controller: 'SearchResultsController'
       })
 
       .when('/signup', {

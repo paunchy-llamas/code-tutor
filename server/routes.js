@@ -4,6 +4,12 @@ var path = require('path');
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 
+var rootPath = path.join(__dirname, '..');
+
+
+var rootPath = path.join(__dirname, '..');
+
+
 module.exports = function (app, express) {
   app.use(express.static('client'));
 
@@ -26,6 +32,9 @@ module.exports = function (app, express) {
   app.use('/update', helpers.decode);
   app.post('/api/users/profile', helpers.decode, multipartMiddleware, userController.saveProfile);
 
+  app.get('/*', function(req, res) {
+    res.sendFile(rootPath + '/client/index.html');
+  });
   
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler
