@@ -10,4 +10,24 @@
 
   <!-- etc... -->
 
+  <div ng-controller='SearchResultsController'>
+   <div ng-repeat="tutor in tutorData">
+    <a ng-href="/tutor/{{tutor.id}}">
+      <p>Username: {{ tutor.username }} </p>
+      <h5>Name: {{tutor.name}}</h5>
+      <img ng-src="{{tutor.imageId}}">
+    </a>
+    <span>Knows: </span><br>
+    <ul ng-repeat="subject in tutor.subjects">
+      <li>- {{subject}}</li>
+    </ul>
+    <span>City: {{tutor.location.city}}</span><br>
+    <p></p>
+   
+   
+    </div>
+  </div>
+   
+</div>
+
 </div>
