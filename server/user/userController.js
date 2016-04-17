@@ -40,15 +40,15 @@ module.exports = {
 
   // return tutors based on searchbar fields
   search: function (req, res, next) {
-    var city = req.query.city;
-    var subjectsArr = req.query.subjects ? req.query.subjects.split(',') : null;
+    var city = req.query.city ? req.query.city.toLowerCase() : null;
+    var subjectsArr = req.query.subjects ? req.query.subjects.toLowerCase().split(/\W+/) : null;
 
     var requirements = {
       isTutor: true,
-      'location.city': city
     }; 
 
     if (subjectsArr) { requirements.subjects = {$in: subjectsArr}; }
+    if (city) { requirements['location.city'] = city; }
 
     findTutors(requirements)
     .then(function(users) {
@@ -64,6 +64,10 @@ module.exports = {
   saveProfile: function(req, res) {
     // helpers.decode gives us the username from the token on this request
     var update = function(req, res) {
+      console.log(req.body.subjects);
+      if (req.body.subjects) { req.body.subjects = req.body.subjects.join(',').toLowerCase().split(/\W+/); }
+      if (req.body.location.city) { req.body.location.city = req.body.location.city.toLowerCase(); }
+      console.log(req.body);
       updateUser({username: req.user.username}, req.body, {new: true}, function(err, doc) {
         if (!err) {
           res.send(doc);

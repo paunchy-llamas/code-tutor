@@ -7,8 +7,8 @@ angular.module('codellama.search', [])
     this.tutorData = [];
 
     this.getTutors = function(city, subjects) {
-      parsedCity = city.replace(/\ /, '+');
-      parsedSubjects = subjects.replace(/\ /g, '+');
+      // parsing the strings will be handled sever-side
+      // TODO: sanitize inputs
       
       return $http({
         method: 'GET',
@@ -46,12 +46,12 @@ angular.module('codellama.search', [])
   })
 
   .controller('SearchResultsController', function ($scope, SearchService) {
-
     $scope.$watch(
       function() { return SearchService.tutorData; },
 
       function(newVal) {
         $scope.tutorData = newVal;
+        $scope.subjectLength = newVal.length;
       }
     );
 
