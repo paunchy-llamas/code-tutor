@@ -798,3 +798,8 @@ select:invalid {
   font-size: 13px;
   line-height: 12px;
 } 
+
+.codeshare-form {
+  width: 50%;
+  height: 500px;
+}
