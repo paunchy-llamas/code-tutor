@@ -758,6 +758,16 @@ select:invalid {
   height: 500px;
 }
 
-#codeshareBox {
+#codeshare-input {
   text-align: left !important;
+}
+
+.codeshare-tab {
+  background-color: #fff;
+  color: #bbb;
+  width: 40px;
+  height: 25px;
+  align: left;
+  border: none;
+  border-radius: 0 5px 0 0;
 }
