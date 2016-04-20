@@ -758,3 +758,6 @@ select:invalid {
   height: 500px;
 }
 
+#codeshareBox {
+  text-align: left !important;
+}
