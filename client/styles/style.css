@@ -803,3 +803,7 @@ select:invalid {
   width: 50%;
   height: 500px;
 }
+
+#codeshareBox {
+  text-align: left !important;
+}
