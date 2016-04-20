@@ -753,4 +753,8 @@ select:invalid {
   top: -20px;
 }
 
+.codeshare-form {
+  width: 50%;
+  height: 500px;
+}
 
