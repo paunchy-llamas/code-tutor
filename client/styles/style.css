@@ -773,6 +773,9 @@ select:invalid {
   background-color: #2dd;
   color: #fff;
 }
+.angular-google-map-container { 
+  height: 400px; 
+}
 
 .codeshare-select {
   font-family: 'Open Sans', sans-serif;

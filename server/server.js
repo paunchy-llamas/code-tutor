@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost/codeLlama');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
   extended: true
