@@ -702,6 +702,12 @@ select:invalid {
   padding-left: 30px;
 }
 
+.times-table {
+  width: 50%;
+  margin: auto;
+  padding-left: 20px;
+}
+
 .subjects-table-entry {
   text-align: left;
 }
@@ -751,6 +757,10 @@ select:invalid {
 .city {
   position: absolute;
   top: -20px;
+}
+
+.angular-google-map-container { 
+  height: 400px; 
 }
 
 
