@@ -19,6 +19,7 @@ app.use(bodyParser.json({limit: '5mb'}));
 app.use(methodOverride()); 
 
 var codeshareCode = {};
+var codeshareGroups = {};
 
 // sockets.io
 io.on('connection', function(socket) {

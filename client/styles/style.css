@@ -773,3 +773,11 @@ select:invalid {
   background-color: #2dd;
   color: #fff;
 }
+
+.codeshare-select {
+  font-family: 'Open Sans', sans-serif;
+  color: #555;
+  border: none;
+  height: 30px;
+  margin: 5px;
+}
