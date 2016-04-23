@@ -26,6 +26,7 @@ angular.module('codellama.services', [])
 
   /* Update logged-in and is-tutor status with these functions*/
   /* Currently only called when app runs in app.js's .run */
+  // Runs function when clicking "Log out" - use this to change status? 
   var isLoggedIn = function () {
     return !!$window.localStorage.getItem('com.codellama');
   };

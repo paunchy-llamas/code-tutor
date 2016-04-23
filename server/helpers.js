@@ -18,12 +18,14 @@ module.exports = {
 
     if (!token) {
       return res.send(403); // send forbidden if a token is not provided
+      console.log('no token???')
     }
     try {
       // decode token and attach user to the request
       // for use inside our controllers
       user = jwt.decode(token, 'secret');
       req.user = user;
+      console.log(req.user);
       next();
     } catch (error) {
       return next(error);

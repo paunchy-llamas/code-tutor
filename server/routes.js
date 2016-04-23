@@ -18,10 +18,15 @@ module.exports = function (app, express) {
   app.post('/api/users/signin', userController.signin);
 
   app.get('/api/tutor/:username', userController.findTutor);
+  app.get('/api/tutor/:github', userController.findTutorByGithub);
+
   app.get('/api/users/img/:objectId', userController.getImg);
 
-  app.post('/api/users/profile', helpers.decode, multipartMiddleware, userController.saveProfile);
+  app.get('/api/users/myProfile', helpers.decode, multipartMiddleware, userController.findUser);
+  app.post('/api/users/:username', helpers.decode, multipartMiddleware, userController.saveProfile);
+
   app.put('/api/tutor/addLike', helpers.decode, userController.addLike);
+  app.put('/api/tutor/toggle', userController.toggle);
 
   app.get('/*', function(req, res) {
     res.sendFile(rootPath + '/client/index.html');

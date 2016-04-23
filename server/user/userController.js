@@ -38,6 +38,34 @@ module.exports = {
       });
   },
 
+  // return a tutor's profile
+  findTutorByGithub: function(req, res, nex) {
+    
+    console.log('here');
+
+    findUser({github: req.params.github})
+      .then(function(tutor) {
+        if (!tutor) {
+          next( new Error('Invalid tutor'));
+        } else {
+          res.send(tutor);
+        }
+      });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+  },
+
+  findUser: function(req, res, nex) {
+    console.log(req);
+    findUser({username: req.user.username})
+      .then(function(user) {
+        console.log('HEYYYY USER DATA ---->', user);
+        if (!user) {
+          next( new Error('Invalid user'));
+        } else {
+          res.send(user); 
+        }
+      });
+  },
+
   // return tutors based on searchbar fields
   search: function (req, res, next) {
     var city = req.query.city ? req.query.city.toLowerCase() : null;
@@ -73,6 +101,15 @@ module.exports = {
       }
     });
   },
+
+  toggle: function(req, res) {
+    updateUser({username: req.body.username}, {status: req.body.status}, function(err, doc) {
+      if (!err) {
+        res.send(doc);
+      }
+    });
+  },
+
 
   // updates a tutor's profile from /update
   saveProfile: function(req, res) {
