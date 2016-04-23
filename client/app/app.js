@@ -6,6 +6,7 @@
     'codellama.auth',
     'codellama.fileUpload',
     'codellama.nav',
+    'codellama.codeshare',
     'ngRoute'])
 
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
@@ -48,6 +49,10 @@
         templateUrl: 'app/tutors/tutor.html',
         controller: 'TutorController'
       })
+      .when('/tutor/:username/codeshare', {
+        templateUrl: 'app/codeshare/codeshare.html',
+        controller: 'CodeshareController'
+      })
       .when('/about', {
         templateUrl: 'app/about/about.html'
       })
@@ -67,10 +72,10 @@
       var attach = {
         request: function (object) {
           var jwt = $window.localStorage.getItem('com.codellama');
-          if (jwt) {
+          if (jwt && !(object.url.includes('maps.googleapis.com'))) {
             object.headers['x-access-token'] = jwt;
           }
-          object.headers['Allow-Control-Allow-Origin'] = '*';
+          // object.headers['Allow-Control-Allow-Origin'] = '*';
           return object;
         }
       };
