@@ -1,6 +1,6 @@
-# CodeTutor
+# [Code Tutor](http://104.131.176.9/)
 
-Find programming help near you!
+Get connected with an experienced developer to learn coding.
 
 ## Table of Contents
 
