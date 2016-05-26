@@ -1,4 +1,5 @@
 # [Code Tutor](http://104.131.176.9/)
+![Code Tutor Home](https://github.com/paunchy-llamas/code-tutor/blob/master/codetutor-home.png)
 
 Get connected with an experienced developer to learn coding.
 
