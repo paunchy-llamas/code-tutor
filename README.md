@@ -1,7 +1,7 @@
 # [Code Tutor](http://104.131.176.9/)
 Get connected with an experienced developer to learn coding.
 
-![Code Tutor Home](https://github.com/paunchy-llamas/code-tutor/blob/master/codetutor-home.png)
+[<img src="https://github.com/paunchy-llamas/code-tutor/blob/master/codetutor-home.png">](http://104.131.176.9/)
 
 ## Table of Contents
 
